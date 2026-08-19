@@ -1,0 +1,73 @@
+name: Feature request / 功能建议
+description: Suggest an improvement or a new capability / 提出改进或新能力的建议
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Good suggestions describe a problem first and a solution second. English or Chinese are both fine.
+        好的建议先说清问题，再谈方案。中文或英文均可。
+
+        This project stays deliberately focused, so not every request will be implemented — a clear
+        explanation of the underlying need helps a lot.
+        本项目有意保持克制，并非每个建议都会实现——把真实需求讲清楚会很有帮助。
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before suggesting / 提交前确认
+      options:
+        - label: I searched existing issues for the same idea / 我搜索过是否已有相同建议
+          required: true
+        - label: This is about AxAIHub itself, not a third-party plugin / 这是关于 AxAIHub 本身，而非第三方插件
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to solve? / 你想解决什么问题？
+      description: Describe the situation, not the feature / 描述场景，而不是直接描述功能
+      placeholder: "When I ... I have to ... which means ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution / 你设想的方案
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which area / 涉及范围
+      options:
+        - "AI assistant / AI 助手"
+        - "Office tools / 办公工具"
+        - "Image editor / 图片编辑"
+        - "Files and projects / 文件与项目"
+        - "Offline engine and models / 离线引擎与模型"
+        - "Plugin system / 插件体系"
+        - "Interface and interaction / 界面与交互"
+        - "Interface language and localisation / 界面语言与本地化"
+        - "Documentation / 文档"
+        - "Other / 其他"
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you have tried / 你试过的替代做法
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else / 其他补充
+      description: Mock-ups, references, or how other apps handle it / 草图、参考资料，或其他应用的做法
+    validations:
+      required: false

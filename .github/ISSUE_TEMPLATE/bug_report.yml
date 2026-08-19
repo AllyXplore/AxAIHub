@@ -1,0 +1,109 @@
+name: Bug report / 缺陷报告
+description: Something does not work as expected / 反馈无法正常工作的问题
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this. English or Chinese are both fine.
+        感谢反馈，中文或英文均可。
+
+        Security problems: please do **not** post them here. Use the private channels in SECURITY.md.
+        安全问题请**不要**在此公开提交，请走 SECURITY.md 中的私下渠道。
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before reporting / 提交前确认
+      options:
+        - label: I am using the latest release / 我使用的是最新发布版本
+          required: true
+        - label: I searched existing issues, including closed ones / 我搜索过已有 issue（含已关闭）
+          required: true
+        - label: My installer came from an official release page / 我的安装包来自官方发行版页面
+          required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: App version / 应用版本
+      description: Shown in the app under About / 见应用内“关于”页
+      placeholder: "3.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Device model / 设备型号
+      placeholder: "Xiaomi 14 / Pixel 8 / Samsung S24"
+    validations:
+      required: true
+
+  - type: input
+    id: android
+    attributes:
+      label: Android version and system skin / 系统版本与定制系统
+      placeholder: "Android 15, HyperOS 2.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / 复现步骤
+      description: Numbered steps, as specific as possible / 请编号列出，尽量具体
+      placeholder: |
+        1. Open ...
+        2. Tap ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result / 期望结果
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result / 实际结果
+      description: Attach a screenshot or recording if you can. Remove personal information first. / 可附截图或录屏，请先移除个人信息。
+    validations:
+      required: true
+
+  - type: dropdown
+    id: plugins
+    attributes:
+      label: Does it still happen with third-party plugins disabled? / 停用第三方插件后是否仍然出现？
+      options:
+        - "Yes, still happens / 是，仍然出现"
+        - "No, it stops / 否，不再出现"
+        - "I have no third-party plugins / 我没有安装第三方插件"
+        - "Not tested / 未测试"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often / 出现频率
+      options:
+        - "Every time / 每次都出现"
+        - "Often / 经常"
+        - "Occasionally / 偶尔"
+        - "Only once so far / 目前只出现过一次"
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else / 其他补充
+      description: Free storage, whether a local model was running, recent changes, and so on / 可用空间、是否在跑本地模型、最近做过的改动等
+    validations:
+      required: false

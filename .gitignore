@@ -1,0 +1,35 @@
+# Local working notes - never published
+# 本地工作笔记，不上传
+_local/
+
+# Installers and app bundles are distributed as release attachments, not committed
+# 安装包通过发行版附件分发，不提交进仓库
+*.apk
+*.aab
+*.apks
+*.idsig
+
+# Signing material must never be committed
+# 签名材料绝对不能提交
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+key.properties
+signing.properties
+
+# Local checksum scratch files
+# 本地校验值草稿
+*.sha256
+checksums-local.txt
+
+# OS and editor noise
+# 系统与编辑器产生的杂项
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+*~
+.idea/
+.vscode/
