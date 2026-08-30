@@ -2,9 +2,11 @@
 
 # AxAIHub
 
-**A local-first AI workspace for Android — AI assistant, office suite, image editor, file manager, and an open plugin system, all running on your device.**
+**The AI hub of your Android phone — one AI assistant commanding your apps, files, tools, and devices, all on-device.**
 
-[![Version](https://img.shields.io/badge/version-3.0.0-blue)](CHANGELOG.md)
+**Possibly the most powerful AI agent on Android — today, and built for what comes next.**
+
+[![Version](https://img.shields.io/badge/version-3.1.1-blue)](CHANGELOG.md)
 [![Platform](https://img.shields.io/badge/platform-Android-brightgreen)](#requirements)
 [![Android](https://img.shields.io/badge/Android-7.0%2B-brightgreen)](#requirements)
 [![ABI](https://img.shields.io/badge/ABI-arm64--v8a-lightgrey)](#requirements)
@@ -21,11 +23,13 @@
 
 ## What is AxAIHub
 
-AxAIHub is a **local-first AI workspace** for Android that goes far beyond a simple chat interface. It is a unified platform where an AI assistant sits at the center of a suite of on-device tools — office documents, image editing, file management, project boards, notes, and small utilities — and can **directly operate them** through a local tool bus, with no cloud relay required.
+AxAIHub is the **AI hub of your Android phone** — far more than a chat interface. It is a unified platform where an AI assistant sits at the center of a suite of on-device tools — office documents, image editing, file management, project boards, notes, and small utilities — and can **directly operate them** through a local tool bus, with no cloud relay required.
 
 Unlike most AI apps that are thin chat wrappers around cloud APIs, AxAIHub is built around a fundamentally different philosophy: **everything that can run locally, runs locally.** Cloud AI providers are entirely optional — you bring your own credentials and endpoints, or you run models fully offline using the on-device engine.
 
 The app is built with **Tauri 2.0**, combining a native Android shell with a web-based UI layer, delivering a responsive experience while maintaining full access to device capabilities.
+
+**Built-in depth that grows with you.** AxAIHub ships with a 35+ tool system across 9 capability domains, and its **runtime integration interface** lets you plug your own execution environments in on top of the runtimes already bundled (Python 3.11 built in, Termux optional) — the ceiling is set by you, not by us. System-level access (Shizuku/Root) stays strictly opt-in for those who need it. Automation and deeper system capabilities remain firmly on our roadmap — they take long-term refinement to build right, and restraint like skipping blind screen-tapping is a compliance choice for the long haul, not a lack of ambition.
 
 ---
 
@@ -165,6 +169,22 @@ flowchart TB
 
 ## Key Features
 
+### Built-in Tool System — 35+ tools, 9 capability domains
+
+The AI doesn't just chat — it can **actually operate your phone** through a 35+ built-in tool system, grouped into 9 capability domains:
+
+- **Web & Information (5)**: live web search, file-content search (grep), filename search, chat-attachment reading, audio extraction
+- **File Operations (7)**: create / edit (full-file and line-level) / read / list / delete / rename / move files on your device
+- **Terminal & Execution (2)**: full terminal (BusyBox 300+ commands, Android Shell, Termux) and Python execution
+- **Multi-Agent Concurrency (2)**: concurrent multi-AI dispatch, parallel multi-tool scheduling
+- **Image (2)**: on-device photo editing (filters & adjustments) and AI image generation
+- **Tasks & Schedule (5)**: structured task plans (create/add/update), scheduled reminders with auto AI execution, structured question cards
+- **Text & Encoding (12)**: base64, hash, timestamp, UUID, password, JSON, encode (10 formats), JWT, regex, text layout, text coloring, feedback
+- **MCP (1+)**: external tool servers via the MCP protocol
+- **Plugin System**: third-party plugin calling
+
+This is the deepest on-device tooling available to an AI agent on Android — your assistant can search the web, write code, edit files, run terminals, and orchestrate multiple AI models in parallel, all on your phone.
+
 ### AI Assistant
 - Works with any cloud AI provider you configure (OpenAI-compatible APIs, local inference endpoints)
 - **Fully offline on-device engine** — download a model once, run inference locally with no network
@@ -298,7 +318,7 @@ Official releases are published as attachments on the release page below:
 | --- | --- |
 | GitHub | https://github.com/AllyXplore/AxAIHub/releases/latest |
 
-Installer file name pattern: AxAIHub-<version>-arm64-v8a.apk
+Installer file name pattern: AxAIHub-<version>-aarm64-v8a.apk
 
 Only files downloaded from the page above are official. Every release lists a SHA-256 checksum and the signing certificate fingerprint — please check them before installing. See [docs/VERIFY.md](docs/VERIFY.md).
 
@@ -307,7 +327,7 @@ Only files downloaded from the page above are official. Every release lists a SH
 ## Requirements
 
 - **Android**: 7.0 (API level 24) or newer
-- **CPU**: 64-bit ARM only (rm64-v8a). 32-bit ARM and x86 are not supported
+- **CPU**: 64-bit ARM only (arm64-v8a). 32-bit ARM and x86 are not supported
 - **Storage**: ~120 MB for the app itself
 - **RAM** (optional, for offline AI engine): 6 GB or more recommended, plus space for downloaded model files
 

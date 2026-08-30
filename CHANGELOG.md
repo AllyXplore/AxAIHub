@@ -18,7 +18,7 @@ Work in progress before the first public release. 首个公开版本发布前的
 
 ---
 
-## [3.0.0] - not yet released / 尚未发布
+## [3.1.1] - not yet released / 尚未发布
 
 > First public release. Fill this section in when the installer is final, then move it above the
 > `Unreleased` block and tag the repository.
